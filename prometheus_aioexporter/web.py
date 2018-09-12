@@ -83,7 +83,7 @@ class PrometheusExporter:
     async def _handle_metrics(self, request):
         """Handler for metrics."""
         if self._update_handler:
-            await self._update_handler(self.registry.get_metrics())
+            await self._update_handler(request, self.registry.get_metrics())
         response = Response(body=self.registry.generate_metrics())
         response.content_type = CONTENT_TYPE_LATEST
         return response

@@ -1,3 +1,6 @@
+- The update handler corouting now takes the aiohttp.web.Request as an
+  additional argument.
+
 1.3.0 - 2018-02-20
 ==================
 
